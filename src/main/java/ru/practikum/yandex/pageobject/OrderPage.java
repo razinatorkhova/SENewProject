@@ -20,26 +20,52 @@ public class OrderPage {
 
     public static final String ORDER_PAGE_URL = "https://qa-scooter.praktikum-services.ru/order";
 
+    // Поле ввода имени формы "Для кого самокат"
     private By firstNameInput = By.xpath("//input[@placeholder='* Имя']");
+
+    // Поле ввода фамилии формы "Для кого самокат"
     private By lastNameInput = By.xpath("//input[@placeholder='* Фамилия']");
+
+    // Поле ввода адреса формы "Для кого самокат"
     private By addressInput = By.xpath("//input[@placeholder='* Адрес: куда привезти заказ']");
+
+    // Поле ввода станции метро формы "Для кого самокат"
     private By subwayCheck = By.xpath("//input[@placeholder='* Станция метро']");
+
+    // Поле ввода номера телефона формы "Для кого самокат"
     private By phoneInput = By.xpath("//input[@placeholder='* Телефон: на него позвонит курьер']");
+
+    // Станция метро Бульвар Рокоссовского
     private By metroStationInput = By.xpath(".//button[@value='1']");
 
+    // кнопка Далее после формы "Для кого самокат"
     private By nextButton = By.xpath("//button[text()='Далее']");
 
+    // Поле ввода даты доставки формы "Про Аренду"
     private By deliveryDateInput = By.xpath("//input[@placeholder='* Когда привезти самокат']");
+
+    // Поле ввода срока аренды формы "Про Аренду"
     private By rentPeriodInput = By.xpath(".//div[@class='Dropdown-placeholder']");
+
+    // Поле выбора цвета самоката формы "Про Аренду"
     private By scooterColorCheck = By.xpath(".//input[@id='black']");
+
+    // Поле ввода комментария формы "Про Аренду"
     private By commentToCourierInput = By.xpath("//input[@placeholder='Комментарий для курьера']");
+
+    // Срок аренды "Сутки"
     private By oneDayRent = By.xpath(".//div[@role='option' and text()='сутки']");
+
+    // выбор даты 16.11.2024
     private By chooseDate = By.xpath(".//div[@aria-label='Choose суббота, 16-е ноября 2024 г.']");
 
+    // кнопка "Заказать" на странице заказа после формы Про Аренду
     private By orderButton = By.xpath("//*[@class='Order_Buttons__1xGrp']//button[text()='Заказать']");
 
+    // кнопка Да для подтверждения заказа
     private By approveButton = By.xpath("//*[@class='Order_Buttons__1xGrp']//button[text()='Да']");
 
+    // Pop-up Заказ оформлен
     private By orderConfirmed = By.xpath(".//div[@class='Order_ModalHeader__3FDaJ' and text()='Заказ оформлен']");
 
     protected WebDriver driver;
