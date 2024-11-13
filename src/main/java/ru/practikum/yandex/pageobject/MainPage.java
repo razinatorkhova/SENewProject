@@ -13,12 +13,16 @@ public class MainPage {
 
     private WebDriver driver;
 
+    //кнопка для принятия куки "Да, все привыкли"
     private By cookiesButton = By.xpath(".//button[@id='rcc-confirm-button']");
 
+    //кнопка "Заказать" в верхней части главной страницы
     private By orderTopButton = By.xpath (".//button[@class='Button_Button__ra12g']");
 
+    //кнопка "Заказать" в верхней части главной страницы
     private By orderDownButton = By.xpath (".//button[contains(@class, 'Button_Middle')]");
 
+    //первый вопрос FAQ
     private By firstQuestion = By.xpath (".//div[@id='accordion__heading-0']");
 
     public MainPage(WebDriver driver) {
@@ -31,7 +35,7 @@ public class MainPage {
         driver.get(MAIN_PAGE_URL);
     }
 
-    public void сookiesButtonClick() {
+    public void cookiesButtonClick() {
         new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.elementToBeClickable(cookiesButton));
         driver.findElement(cookiesButton).click();
