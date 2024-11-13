@@ -1,18 +1,14 @@
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.practikum.yandex.pageobject.MainPage;
 
-import java.time.Duration;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class CheckAnswersTextTest extends BaseUITest {
 
     private final int questionIndex;
-    private MainPage mainPage;
 
     private static final String[] EXPECTED_ANSWERS = {
             "Сутки — 400 рублей. Оплата курьеру — наличными или картой.",
@@ -37,13 +33,9 @@ public class CheckAnswersTextTest extends BaseUITest {
     @Test
     public void questionsAndAnswersTest() {
         MainPage mainPage = new MainPage(driver);
-        mainPage.openMainPage();
-        mainPage.сookiesButtonClick();
         mainPage.scrollToElement();
         mainPage.getQuestion(questionIndex).click();
 
-        new WebDriverWait(driver, Duration.ofSeconds(5))
-                .until(ExpectedConditions.visibilityOf(mainPage.getAnswer(questionIndex)));
 
         String answerText = mainPage.getAnswer(questionIndex).getText();
 
